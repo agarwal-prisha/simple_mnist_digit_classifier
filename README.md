@@ -1,23 +1,23 @@
-MNIST Digit Classification using PyTorch
+# MNIST Digit Classification using PyTorch  
 
-Project Overview:
+## Project Overview:
 This project implements a Convolutional Neural Network (CNN) using PyTorch to classify handwritten digits from the MNIST dataset. The model is trained on grayscale images of size 28×28 and predicts digits from 0 to 9.
 
-Objectives:
-Develop a CNN-based image classification model
-Understand the complete deep learning pipeline: data loading, training, evaluation, and inference
-Gain practical experience with PyTorch components such as nn.Module, optimizers, and loss functions
-Implement GPU acceleration for efficient training
+## Objectives:
+- Develop a CNN-based image classification model
+- Understand the complete deep learning pipeline: data loading, training, evaluation, and inference
+- Gain practical experience with PyTorch components such as nn.Module, optimizers, and loss functions
+- Implement GPU acceleration for efficient training
 
-Dataset:
+## Dataset:
 The MNIST dataset consists of-
-60,000 training images
-10,000 testing images
-Grayscale images of size 28×28
-10 classes representing digits from 0 to 9
-In this project, the dataset is loaded from local .idx files.
+1. 60,000 training images
+2. 10,000 testing images
+3. Grayscale images of size 28×28
+4. 10 classes representing digits from 0 to 9
+ In this project, the dataset is loaded from local .idx files.
 
-Project Structure:
+##Project Structure:
 mnist-classifier/
 │
 ├── model.py              # CNN architecture
@@ -32,46 +32,43 @@ mnist-classifier/
 └── Models/
     └── model.pt          # Saved trained model (ignored in Git)
 
-Requirements:
+## Requirements:
 Install the required dependencies-
 pip install torch torchvision numpy tqdm opencv-python torchsummary
 
-Model Architecture:
-
+## Model Architecture:
 The model consists of-
-Two convolutional layers with ReLU activation and max pooling
-Dropout layer for regularization
-Two fully connected layers
-Output layer with 10 classes
+1. Two convolutional layers with ReLU activation and max pooling
+2. Dropout layer for regularization
+3. Two fully connected layers
+4. Output layer with 10 classes
 
-Training:
+## Training:
 To train the model, run-
-python train.py
+`python train.py`
 
 The training process includes-
-Forward propagation
-Loss computation using CrossEntropyLoss
-Backpropagation
-Weight updates using the Adam optimizer
+- Forward propagation
+- Loss computation using CrossEntropyLoss
+- Backpropagation
+- Weight updates using the Adam optimizer
 
 After training, the model is saved as-
 Models/model.pt
 
-Testing and Inference:
-
+## Testing and Inference:
 To test the model and visualize predictions-
-python test.py
+`python test.py`
 
 This will-
-Load the trained model
-Perform inference on test images
-Display each image using OpenCV
-Show the predicted digit as the window title
+- Load the trained model
+- Perform inference on test images
+- Display each image using OpenCV
+- Show the predicted digit as the window title
 
-GPU Support:
-
+## GPU Support:
 The code automatically detects and uses a GPU if available:
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+`device = torch.device("cuda" if torch.cuda.is_available() else "cpu")`
 
-Conclusion:
+## Conclusion:
 This project demonstrates a complete deep learning workflow for image classification using PyTorch, including model design, training, evaluation, and real-time inference visualization.
